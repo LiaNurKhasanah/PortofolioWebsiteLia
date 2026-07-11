@@ -44,11 +44,20 @@ export const metadata: Metadata = {
     siteName: 'Lia Nur Khasanah Portfolio',
     type: 'website',
     locale: 'id_ID',
+    images: [
+      {
+        url: '/LiaNurKhasanah.png',
+        width: 800,
+        height: 800,
+        alt: 'Lia Nur Khasanah - Voice Over & Content Writer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Lia Nur Khasanah | Voice Over & Content Writer',
     description: 'Portofolio Profesional Lia Nur Khasanah - Voice Over Talent & Content Writer.',
+    images: ['/LiaNurKhasanah.png'],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || 'google-site-verification-placeholder',
@@ -66,8 +75,39 @@ export default function RootLayout({
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Lia Nur Khasanah',
+    url: siteUrl,
+    image: `${siteUrl}/LiaNurKhasanah.png`,
+    jobTitle: 'Voice Over Talent & Content Writer',
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'UIN Sunan Kalijaga Yogyakarta',
+    },
+    knowsAbout: [
+      'Voice Over',
+      'Content Writing',
+      'Copywriting',
+      'Public Speaking',
+      'Social Media Management',
+      'Communication Science',
+    ],
+    sameAs: [
+      'https://www.linkedin.com/in/lia-nur-khasanah',
+      'https://www.instagram.com/lianrkhsnhh',
+    ],
+  }
+
   return (
     <html lang="id" className={quicksand.variable} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${quicksand.className} antialiased selection:bg-pink-200 selection:text-pink-900`}
         suppressHydrationWarning
