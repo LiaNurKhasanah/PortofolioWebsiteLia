@@ -59,6 +59,11 @@ export const metadata: Metadata = {
     description: 'Portofolio Profesional Lia Nur Khasanah - Voice Over Talent & Content Writer.',
     images: ['/LiaNurKhasanah.png'],
   },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || 'google-site-verification-placeholder',
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || 'yandex-site-verification-placeholder',
