@@ -60,9 +60,14 @@ export const metadata: Metadata = {
     images: ['/LiaNurKhasanah.png'],
   },
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || 'google-site-verification-placeholder',
