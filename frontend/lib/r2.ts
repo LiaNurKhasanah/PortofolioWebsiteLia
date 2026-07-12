@@ -10,7 +10,7 @@ const r2 = new S3Client({
   },
 })
 
-const BUCKET = process.env.R2_BUCKET_NAME ?? 'lia-portfolio'
+const BUCKET = process.env.R2_BUCKET_NAME ?? 'lia-bucket'
 const PUBLIC_URL = process.env.NEXT_PUBLIC_R2_PUBLIC_URL ?? ''
 
 /* ── Upload file to R2 ── */
