@@ -15,6 +15,7 @@ import AchievementsManager from '../views/admin/AchievementsManager'
 import CertificatesManager from '../views/admin/CertificatesManager'
 import ContactsManager from '../views/admin/ContactsManager'
 import CharacterValuesManager from '../views/admin/CharacterValuesManager'
+import MediaManager from '../views/admin/MediaManager'
 import { useAdminSession, useGetContacts, useLogout } from '../hooks/backend/admin'
 
 export default function AdminDashboard() {
@@ -62,6 +63,7 @@ export default function AdminDashboard() {
     prestasi:    <AchievementsManager />,
     sertifikat:  <CertificatesManager />,
     pesan:       <ContactsManager />,
+    media:       <MediaManager />,
   }
 
   if (checkingSession) {

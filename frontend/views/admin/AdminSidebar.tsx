@@ -1,4 +1,4 @@
-import { User, Wrench, Briefcase, FolderOpen, Mic, Trophy, Award, MessageSquare, LogOut, LayoutDashboard, Heart } from 'lucide-react'
+import { User, Wrench, Briefcase, FolderOpen, Mic, Trophy, Award, MessageSquare, LogOut, LayoutDashboard, Heart, Image as ImageIcon } from 'lucide-react'
 import { Button } from '../../lib/shadcn/button'
 import { Badge } from '../../lib/shadcn/badge'
 import { AdminMenu } from '../../models/types'
@@ -20,6 +20,7 @@ const menus: { key: AdminMenu; label: string; icon: React.ReactNode }[] = [
   { key: 'prestasi',   label: 'Prestasi',    icon: <Trophy className="w-4 h-4" />       },
   { key: 'sertifikat', label: 'Sertifikat',  icon: <Award className="w-4 h-4" />        },
   { key: 'pesan',      label: 'Pesan Masuk', icon: <MessageSquare className="w-4 h-4" /> },
+  { key: 'media',      label: 'Media Manager', icon: <ImageIcon className="w-4 h-4" />   },
 ]
 
 export default function AdminSidebar({ active, onChange, onLogout, unreadCount = 0 }: Props) {

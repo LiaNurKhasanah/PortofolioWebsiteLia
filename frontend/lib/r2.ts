@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3'
+import { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3'
 
 /* ── R2 Client (S3-compatible) ── */
 const r2 = new S3Client({
@@ -38,6 +38,25 @@ export async function deleteFromR2(key: string): Promise<void> {
       Key: key,
     })
   )
+}
+
+/* ── List files from R2 ── */
+export async function listFromR2(prefix = '') {
+  const data = await r2.send(
+    new ListObjectsV2Command({
+      Bucket: BUCKET,
+      Prefix: prefix,
+    })
+  )
+  
+  return (data.Contents ?? []).map(item => {
+    return {
+      key: item.Key ?? '',
+      size: item.Size ?? 0,
+      lastModified: item.LastModified ?? new Date(),
+      url: `${PUBLIC_URL}/${item.Key}`,
+    }
+  })
 }
 
 /* ── Helper: generate unique key ── */

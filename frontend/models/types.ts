@@ -146,3 +146,4 @@ export type AdminMenu =
   | 'prestasi'
   | 'sertifikat'
   | 'pesan'
+  | 'media'
