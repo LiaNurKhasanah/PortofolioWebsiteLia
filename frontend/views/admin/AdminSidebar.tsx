@@ -25,39 +25,39 @@ const menus: { key: AdminMenu; label: string; icon: React.ReactNode }[] = [
 
 export default function AdminSidebar({ active, onChange, onLogout, unreadCount = 0 }: Props) {
   return (
-    <aside className="w-60 min-h-screen flex flex-col border-r"
+    <aside className="w-52 md:w-56 min-h-screen flex flex-col border-r"
       style={{ background: '#FFFFFF', borderColor: 'rgba(213,105,137,0.12)' }}>
 
       {/* Logo */}
-      <div className="px-6 py-5 border-b" style={{ borderColor: 'rgba(213,105,137,0.12)' }}>
+      <div className="px-4 py-3.5 border-b" style={{ borderColor: 'rgba(213,105,137,0.12)' }}>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center"
             style={{ background: 'linear-gradient(135deg,#D56989,#EA9CAF)' }}>
-            <LayoutDashboard className="w-4 h-4 text-white" />
+            <LayoutDashboard className="w-3.5 h-3.5 text-white" />
           </div>
           <div>
-            <p className="font-bold text-sm" style={{ color: '#1A1A1A' }}>Panel Admin</p>
-            <p className="text-xs" style={{ color: '#8A7080' }}>Lia Nur Khasanah</p>
+            <p className="font-bold text-xs" style={{ color: '#1A1A1A' }}>Panel Admin</p>
+            <p className="text-[10px]" style={{ color: '#8A7080' }}>Lia Nur Khasanah</p>
           </div>
         </div>
       </div>
 
       {/* Menu */}
-      <nav className="flex-1 px-3 py-4 space-y-1">
+      <nav className="flex-1 px-2 py-3 space-y-0.5 overflow-y-auto max-h-[calc(100vh-110px)]">
         {menus.map(({ key, label, icon }) => {
           const isActive = active === key
           return (
             <button key={key} onClick={() => onChange(key)}
-              className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all"
+              className="w-full flex items-center justify-between px-2.5 py-2 rounded-lg text-xs font-medium transition-all"
               style={{
-                background: isActive ? 'rgba(213,105,137,0.1)' : 'transparent',
+                background: isActive ? 'rgba(213,105,137,0.08)' : 'transparent',
                 color: isActive ? '#D56989' : '#6B5B65',
               }}>
-              <span className="flex items-center gap-2.5">
+              <span className="flex items-center gap-2">
                 {icon} {label}
               </span>
               {key === 'pesan' && unreadCount > 0 && (
-                <Badge className="text-xs px-1.5 py-0 h-4 min-w-4"
+                <Badge className="text-[9px] px-1 py-0 h-3.5 min-w-3.5 flex items-center justify-center"
                   style={{ background: '#D56989', color: '#fff', border: 'none' }}>
                   {unreadCount}
                 </Badge>
@@ -68,11 +68,11 @@ export default function AdminSidebar({ active, onChange, onLogout, unreadCount =
       </nav>
 
       {/* Keluar */}
-      <div className="px-3 py-4 border-t" style={{ borderColor: 'rgba(213,105,137,0.12)' }}>
+      <div className="px-2 py-3 border-t" style={{ borderColor: 'rgba(213,105,137,0.12)' }}>
         <Button variant="ghost" onClick={onLogout}
-          className="w-full justify-start gap-2.5 text-sm rounded-xl"
+          className="w-full justify-start gap-2 px-2.5 py-2 text-xs rounded-lg h-8"
           style={{ color: '#8A7080' }}>
-          <LogOut className="w-4 h-4" /> Keluar
+          <LogOut className="w-3.5 h-3.5" /> Keluar
         </Button>
       </div>
     </aside>
