@@ -1,5 +1,4 @@
 # Kisah di Balik Layar: Portofolio Digital Lia Nur Khasanah 🌸
-
 Di tengah riuhnya era digital, komunikasi bukan lagi sekadar pertukaran kata. Bagi **Lia Nur Khasanah**, seorang mahasiswi semester akhir Ilmu Komunikasi di Yogyakarta, komunikasi adalah seni membangun jembatan emosi. Lewat tulisan (*Content Writing*), suara (*Voice Over*), dan interaksi publik (*Public Speaking*), Lia berdedikasi untuk melahirkan karya-karya yang hangat, ramah, sekaligus profesional.
 
 Website portofolio ini adalah rumah digital tempat Lia menyimpan setiap jejak perjalanannya.

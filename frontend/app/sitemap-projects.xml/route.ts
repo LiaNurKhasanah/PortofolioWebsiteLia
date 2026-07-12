@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getSupabaseServer } from '../../lib/supabase'
 
 export async function GET() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lianurkhasanah.web.id'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lianurkhasanah.my.id'
 
   let projects: any[] = []
   try {
